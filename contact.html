@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Contact Us</h1>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="trains.html">Trains</a>
+    <a href="booking.html">Booking</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="contact">
+
+  <h2>Get in Touch</h2>
+
+  <p>Email: railwayexpress@gmail.com</p>
+  <p>Phone: +91 9876543210</p>
+  <p>Location: Coimbatore, Tamil Nadu</p>
+
+  <form id="contactForm">
+
+    <input
+      type="text"
+      id="contactName"
+      placeholder="Your Name"
+    >
+
+    <input
+      type="email"
+      id="contactEmail"
+      placeholder="Your Email"
+    >
+
+    <textarea
+      id="message"
+      placeholder="Your Message"
+    ></textarea>
+
+    <button type="submit">
+      Send Message
+    </button>
+
+  </form>
+
+</section>
+
+<footer>
+  <p>© 2026 RailWay Express</p>
+</footer>
+
+<script>
+
+document
+.getElementById("contactForm")
+.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  let name =
+  document.getElementById("contactName").value;
+
+  let email =
+  document.getElementById("contactEmail").value;
+
+  let message =
+  document.getElementById("message").value;
+
+  if (
+    name === "" ||
+    email === "" ||
+    message === ""
+  ) {
+    alert("Please fill all fields");
+  }
+
+  else if (
+    !email.includes("@")
+  ) {
+    alert("Enter valid email");
+  }
+
+  else {
+    alert(
+      "Message Sent Successfully!"
+    );
+
+    document
+    .getElementById("contactForm")
+    .reset();
+  }
+
+});
+
+</script>
+
+</body>
+</html>
